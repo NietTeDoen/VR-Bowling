@@ -5,6 +5,7 @@ using UnityEngine;
 public class collision_controller : MonoBehaviour
 {
     public bool Hit;
+    public VariableController variableController;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class collision_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,8 +24,8 @@ public class collision_controller : MonoBehaviour
         if(other.tag == "Ground" && !Hit)
         {
             Hit = true;
-            VariableController.Score += 1;
-            print(VariableController.Score);
+            VariableController.tempScore += 1;
+            print(VariableController.tempScore);
         }
     }
 }
